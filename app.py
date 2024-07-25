@@ -1,6 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 import os
+import PyPDF2
 
 
 api_key = os.getenv("OPENAI_API_KEY")  # Used in production - Uncomment this line when you deploy
