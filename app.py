@@ -48,17 +48,18 @@ resume_text = st.text_area("Paste your resume here:")
 # Input field for the job description
 job_description_text = st.text_area("Paste the job description here:")
 
-# Read the uploaded file if it exists
+#  Read the uploaded file if it exists
 if uploaded_file is not None:
     if uploaded_file.type == "text/plain":
         resume_text = str(uploaded_file.read(), 'utf-8')
     elif uploaded_file.type == "application/pdf":
-        import PyPDF2
+        # Updated PDF reading code to avoid deprecation issues
         pdf_reader = PyPDF2.PdfFileReader(uploaded_file)
         resume_text = ""
-        for page_num in range(pdf_reader.numPages):
+        for page_num in range(pdf_reader.getNumPages()):
             page = pdf_reader.getPage(page_num)
             resume_text += page.extract_text()
+
 
 if st.button('Compare'):
     # Code to process the inputs and compare the resume with the job description
