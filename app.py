@@ -4,7 +4,7 @@ import os
 
 
 api_key = st.secrets["OPENAI_API_KEY"]
-
+client = OpenAI(api_key=api_key)
 
 def compare_resume_to_job_description(resume_text, job_description_text):
     # Ensure your OPENAI_API_KEY is set as an environment variable
