@@ -3,8 +3,7 @@ from openai import OpenAI
 import os
 
 
-# api_key = os.getenv("OPENAI_API_KEY")  # Used in production - Uncomment this line when you deploy
-api_key = "sk-proj-CrZptMGFfT3qHJIriKX9T3BlbkFJUC4i6M6emy33nTxJsf1v" # Used in development - Delete this line when you deploy - This api_key is only made for demonstration purposes
+api_key = os.getenv("OPENAI_API_KEY")  # Used in production - Uncomment this line when you deploy
 
 
 def compare_resume_to_job_description(resume_text, job_description_text):
